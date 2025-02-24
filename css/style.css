@@ -1,0 +1,125 @@
+body{
+  background-color: lightcyan;
+}
+
+h1 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 2em;
+  text-align: center;
+  text-decoration: underline;
+}
+
+h2{
+  font-family: "Playfair Display", Georgia, serif;
+  padding-bottom: 0.25em;
+  font-size: 1.75em;
+  text-align: left;
+  margin: 0;
+}
+
+p {
+  font-family: "Inter", Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+em {
+  color: darkcyan;
+}
+
+#mainNavbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  background-color: cadetblue;
+  z-index: 1000;
+}
+
+.navbarContainer {
+  float: left;
+  width: 100%;
+  position: relative;
+}
+
+#mainNavbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  left: 50%;
+  float: left;
+}
+
+#mainNavbar ul li {
+  float: left;
+  position: relative;
+  right: 50%;
+  display: block;
+  margin: 0;
+}
+
+#mainNavbar ul li a {
+  display: block;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  padding: 0.8em 0 0.8em 0;
+  margin: 0 0.1em;
+  width: 10em;
+  color: #000;
+}
+
+#mainNavbar ul li a:hover {
+  background-color: darkcyan;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#contactSection {
+  float: right;
+  margin-bottom: 1em;
+  margin-left: 1em;
+  border: 0.075em solid black;
+  border-radius: 5px;
+  width: 30%;
+  padding: 1em;
+}
+
+#educationSection, #certificationsSection {
+  float: left;
+  margin-bottom: 1em;
+  border: 0.075em solid black;
+  border-radius: 5px;
+  width: 60%;
+  padding: 1em;
+}
+
+#contactSection h2, #educationSection h2, #certificationsSection h2 {
+  padding-bottom: 0.5em;
+}
+
+#contactSection a {
+  text-decoration: none;
+}
+
+#contactSection a:hover {
+  text-decoration: underline;
+}
+
+.mediaContainer, .textContainer, .filmContainer {
+    margin: 1em;
+    margin-top: 5em;
+}
+
+.filmContainer img {
+  float: left;
+  height: 450px;
+  padding: 0.5em;
+}
+
+.filmContainer p {
+  padding-left: 0.5em;
+}
