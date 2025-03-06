@@ -109,11 +109,17 @@ em {
   text-decoration: underline;
 }
 
-.mediaContainer, .textContainer, .filmContainer {
+#map {
+  width: 900px;
+  height: 600px;
+  margin: 0 auto;
+}
+
+.mediaContainer, .textContainer, .filmContainer, .mapsContainer {
     margin: 1em;
     margin-top: 5em;
 }
-
+  
 .filmContainer img {
   float: left;
   height: 450px;
