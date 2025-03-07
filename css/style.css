@@ -122,10 +122,92 @@ em {
   
 .filmContainer img {
   float: left;
-  height: 450px;
+  height: 600px;
   padding: 0.5em;
 }
 
 .filmContainer p {
   padding-left: 0.5em;
+}
+
+.galleryNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 1rem;
+}
+
+#gallery {
+  display: flex;
+  width: 70%;
+  justify-content: center;
+}
+
+.btns {
+  background-color: darkcyan;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.25em;
+  padding: 0.5em;
+  width: 120px;
+}
+
+#mobileBtns {
+  display: none;
+  width: 90%;
+  margin-bottom: 1em;
+  margin-top: -3em;
+}
+
+.mobBtns {
+  background-color: darkcyan;
+  border: none;
+  border-radius: 5px;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 1.25em;
+  padding: 0.5em;
+  width: 120px;
+}
+
+/*MEDIA QUERIES*/
+
+@media screen and (max-width: 640px) {
+  #contactSection {
+    float: none;
+    margin-left: 0em;
+    width: 90%;
+  }
+
+  #educationSection, #certificationsSection {
+    float: none;
+    width: 90%;
+  }
+
+  #mainNavbar ul li a {
+    width: 3.75em;
+  }
+
+
+.galleryNav {
+  display: flex;
+  flex-direction: column ;
+  align-items: center;
+  justify-content: center;
+  margin: 4rem 1rem;
+}
+
+#gallery {
+  display: flex;
+  justify-content: center;
+}
+
+.btns {
+  display: none;
+}
+
+#mobileBtns {
+  display: flex;
+  justify-content: space-between;
+}
+
 }

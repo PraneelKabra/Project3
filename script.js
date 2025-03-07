@@ -3,17 +3,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const images = [
     { src: "media/fp1.jpeg", alt: "B&W film photo of a tree" },
-    { src: "media/fp2.jpeg", alt: "B&W film photo of the Matrimandir at Auroville, India" },
     { src: "media/fp3.jpeg", alt: "B&W film photo of an old banyan tree" },
     { src: "media/fp4.jpeg", alt: "B&W film photo of 2 stray dogs standing" },
     { src: "media/fp5.jpeg", alt: "B&W film photo of a stray dog sitting" },
     { src: "media/fp6.jpeg", alt: "B&W film photo of dogs receiving treats at a dog shelter/rescue center" },
     { src: "media/fp7.jpeg", alt: "B&W film photo of a puppy waiting obediently for food" },
     { src: "media/fp8.jpeg", alt: "B&W film photo of a mother and daughter" },
-    { src: "media/fp9.jpeg", alt: "B&W film photo of a little girl crouching to pluck flowers, Matrimandir at Auroville visible in the background" },
     { src: "media/fp10.jpeg", alt: "B&W film photo of a mother and daughter" },
     { src: "media/fp11.jpeg", alt: "B&W film photo of a tree and building" },
-    { src: "media/fp12.jpeg", alt: "B&W film photo of a mare and her foal" },
     { src: "media/fp13.jpeg", alt: "B&W photo of a stone sculpture" }
   ];
 
@@ -21,6 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const galleryImage = document.getElementById("galleryImage");
   const prevBtn = document.getElementById("prevBtn");
   const nextBtn = document.getElementById("nextBtn");
+  const prevMobBtn = document.getElementById("prevMobBtn");
+  const nextMobBtn = document.getElementById("nextMobBtn")
+
 
   function updateImage() {
     galleryImage.src = images[currentIndex].src;
@@ -37,17 +37,27 @@ document.addEventListener("DOMContentLoaded", () => {
     updateImage();
   });
 
+  prevMobBtn.addEventListener("click", function () {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateImage();
+  });
+
+  nextMobBtn.addEventListener("click", function () {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateImage();
+  });
+
   updateImage();
 
 });
 
-  function initMap() {
-    const iit = { lat: 41.837831, lng: -87.626453 };
-    const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 15,
-      center: iit,
-      mapTypeId: 'hybrid'
-    });
+function initMap() {
+  const iit = { lat: 41.837831, lng: -87.626453 };
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 15,
+    center: iit,
+    mapTypeId: 'hybrid'
+  });
 
   map.setTilt(45);
 
@@ -65,4 +75,4 @@ document.addEventListener("DOMContentLoaded", () => {
     infoWindow.open(map, marker);
   });
 
-  }
+}
