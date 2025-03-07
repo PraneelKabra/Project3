@@ -187,7 +187,6 @@ em {
     width: 3.75em;
   }
 
-
   .galleryNav {
     display: flex;
     flex-direction: column ;
@@ -208,5 +207,35 @@ em {
   #mobileBtns {
     display: flex;
     justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 641px) and (max-width: 979px) {
+
+  #contactSection {
+    float: none;
+    margin-left: 0em;
+    width: 90%;
+  }
+
+  #educationSection, #certificationsSection {
+    float: none;
+    width: 90%;
+  }
+
+  #mainNavbar ul li a {
+    width: 6em;
+  }
+
+  .galleryNav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 1rem;
+  }
+
+  #gallery {
+    display: flex;
+    justify-content: center;
   }
 }
