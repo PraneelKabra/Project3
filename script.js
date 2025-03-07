@@ -1,14 +1,53 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Up and running!");
+
+  const images = [
+    { src: "media/fp1.jpeg", alt: "B&W film photo of a tree" },
+    { src: "media/fp2.jpeg", alt: "B&W film photo of the Matrimandir at Auroville, India" },
+    { src: "media/fp3.jpeg", alt: "B&W film photo of an old banyan tree" },
+    { src: "media/fp4.jpeg", alt: "B&W film photo of 2 stray dogs standing" },
+    { src: "media/fp5.jpeg", alt: "B&W film photo of a stray dog sitting" },
+    { src: "media/fp6.jpeg", alt: "B&W film photo of dogs receiving treats at a dog shelter/rescue center" },
+    { src: "media/fp7.jpeg", alt: "B&W film photo of a puppy waiting obediently for food" },
+    { src: "media/fp8.jpeg", alt: "B&W film photo of a mother and daughter" },
+    { src: "media/fp9.jpeg", alt: "B&W film photo of a little girl crouching to pluck flowers, Matrimandir at Auroville visible in the background" },
+    { src: "media/fp10.jpeg", alt: "B&W film photo of a mother and daughter" },
+    { src: "media/fp11.jpeg", alt: "B&W film photo of a tree and building" },
+    { src: "media/fp12.jpeg", alt: "B&W film photo of a mare and her foal" },
+    { src: "media/fp13.jpeg", alt: "B&W photo of a stone sculpture" }
+  ];
+
+  let currentIndex = 0;
+  const galleryImage = document.getElementById("galleryImage");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  function updateImage() {
+    galleryImage.src = images[currentIndex].src;
+    galleryImage.alt = images[currentIndex].alt;
+  }
+
+  prevBtn.addEventListener("click", function () {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateImage();
+  });
+
+  nextBtn.addEventListener("click", function () {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateImage();
+  });
+
+  updateImage();
+
 });
 
-function initMap() {
-  const iit = { lat: 41.837831, lng: -87.626453 };
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 15,
-    center: iit,
-    mapTypeId: 'hybrid'
-  });
+  function initMap() {
+    const iit = { lat: 41.837831, lng: -87.626453 };
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 15,
+      center: iit,
+      mapTypeId: 'hybrid'
+    });
 
   map.setTilt(45);
 
@@ -19,11 +58,11 @@ function initMap() {
   });
 
   const infoWindow = new google.maps.InfoWindow({
-	  content: "<img src='media/iit.png' width=63%><a target=_blank href= https://www.google.com/maps/dir//Illinois+Institute+of+Technology,+10+W+35th+St,+Chicago,+IL+60616/@41.8579362,-87.6546515,14z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880e2c72d3e9a80f:0x91cbe4661afb6f1a!2m2!1d-87.6259602!2d41.83671!3e0?hl=en-GB&entry=ttu&g_ep=EgoyMDI1MDMwMy4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D><h2>Visit Illinois Tech!</h2></a>",
-	});
-  
-	marker.addListener("mouseover", () => {
-	  infoWindow.open(map, marker);
-	});
+    content: "<img src='media/iit.png' width=63%><a target=_blank href='https://www.google.com/maps/dir//Illinois+Institute+of+Technology,+10+W+35th+St,+Chicago,+IL+60616/'><h2>Visit Illinois Tech!</h2></a>",
+  });
 
-}
+  marker.addListener("mouseover", () => {
+    infoWindow.open(map, marker);
+  });
+
+  }
