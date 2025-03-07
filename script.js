@@ -19,36 +19,44 @@ document.addEventListener("DOMContentLoaded", () => {
   const prevBtn = document.getElementById("prevBtn");
   const nextBtn = document.getElementById("nextBtn");
   const prevMobBtn = document.getElementById("prevMobBtn");
-  const nextMobBtn = document.getElementById("nextMobBtn")
-
+  const nextMobBtn = document.getElementById("nextMobBtn");
 
   function updateImage() {
-    galleryImage.src = images[currentIndex].src;
-    galleryImage.alt = images[currentIndex].alt;
+    if (galleryImage) {
+      galleryImage.src = images[currentIndex].src;
+      galleryImage.alt = images[currentIndex].alt;
+    }
   }
 
-  prevBtn.addEventListener("click", function () {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    updateImage();
-  });
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateImage();
+    });
+  }
 
-  nextBtn.addEventListener("click", function () {
-    currentIndex = (currentIndex + 1) % images.length;
-    updateImage();
-  });
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateImage();
+    });
+  }
 
-  prevMobBtn.addEventListener("click", function () {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    updateImage();
-  });
+  if (prevMobBtn) {
+    prevMobBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateImage();
+    });
+  }
 
-  nextMobBtn.addEventListener("click", function () {
-    currentIndex = (currentIndex + 1) % images.length;
-    updateImage();
-  });
+  if (nextMobBtn) {
+    nextMobBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateImage();
+    });
+  }
 
   updateImage();
-
 });
 
 function initMap() {
